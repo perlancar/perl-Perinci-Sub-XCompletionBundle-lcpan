@@ -23,10 +23,7 @@ sub gen_completion {
     sub {
         my %cargs = @_;
         my $word    = $cargs{word} // '';
-        my $cmdline = $cargs{cmdline};
         my $r       = $cargs{r};
-
-        return undef unless $cmdline;
 
         my $dbh = Perinci::Sub::XCompletionBundle::lcpan::_connect_lcpan()
             or return undef;
